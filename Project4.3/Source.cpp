@@ -2,25 +2,32 @@
 using namespace std;
 int main()
 {
-	double x; // вхідний аргумент
-	double a; // вхідний параметр
-	double b; // вхідний параметр
-	double c; // вхідний параметр
-	double F; // результат обчислення виразу
+	double x, xp, xk, dx, a, b, c, F ;
 	cout << "a = "; cin >> a;
 	cout << "b = "; cin >> b;
 	cout << "c = "; cin >> c;
-	cout << "x = "; cin >> x;
-
-
+	cout << "xp = "; cin >> xp;
+	cout << "xk = "; cin >> xk;
+	cout << "dx = "; cin >> dx;
+	cout << fixed;
+	cout << "---------------------------" << endl;
+	cout << "|"  << "x" << " |"
+		<< "y" << " |" << endl;
+	cout << "---------------------------" << endl;
+	x = xp;
+	while (x <= xk)
+	{
 	if (a < 0 && x != 0)
 		F = a * x * x + b * b * x;
 	if (a > 0 && x == 0)
 		F = x - (a / (x - c));
 	if (!(a < 0 && x != 0) && !(a > 0 && x == 0))
 		F = 1 + (x / c);
-	cout << endl;
-	cout << " F = " << F << endl;
-	cin.get();
+	cout << "|" << x
+		<< " |" << F
+		<< " |" << endl;
+	x += dx;
+	}
+	cout << "---------------------------" << endl;
 	return 0;
 }
